@@ -21,7 +21,7 @@ public class StudentCollection implements IContainer{
     public IIterator createIterator() {
         IIterator studentIterator = new IIterator() {
             private int s_position = 0;
-            
+
             @Override
             public boolean hasNext() {
                 if (s_position < listOfStudents.size())
@@ -34,7 +34,6 @@ public class StudentCollection implements IContainer{
             public Student next() {
                 if(this.hasNext())
                 {
-                    System.out.println(listOfStudents.get(s_position).toString());
                     return listOfStudents.get(s_position++);
                 }
                 else
@@ -49,7 +48,7 @@ public class StudentCollection implements IContainer{
         IIterator it= studentCollection.createIterator();
         while (it.hasNext())
         {
-            it.next();
+            System.out.println(it.next().toString());
         }
 
     }
@@ -76,6 +75,7 @@ public class StudentCollection implements IContainer{
              }
  * Fra slut til start.
     @Override
+    private int s_position = listOfStudents.size();
     public boolean hasNext() {
         if (s_position != -1)
             return true;
