@@ -74,8 +74,9 @@ public class StudentCollection implements IContainer{
                      return null;
              }
  * Fra slut til start.
+
+              private int s_position = listOfStudents.size();
     @Override
-    private int s_position = listOfStudents.size();
     public boolean hasNext() {
         if (s_position != -1)
             return true;
